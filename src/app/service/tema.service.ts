@@ -17,30 +17,30 @@ export class TemaService {
   }
 
   getAllTema(): Observable<Tema[ ]>{
-    return this.http.get<Tema[]>('http://blogpessoal-deploy.onrender.com/tema',this.token)
+    return this.http.get<Tema[]>('https://blogpessoal-deploy.onrender.com/tema',this.token)
 
   }
 
   getByIdTema (id : number):Observable<Tema>{
     
-    return this.http.get<Tema>(`http://blogpessoal-deploy.onrender.com/tema/${id}`,this.token)
+    return this.http.get<Tema>(`https://blogpessoal-deploy.onrender.com/tema/${id}`,this.token)
     
   }
 
   getByDescricaoTema(descricao: string): Observable<Tema[]>{
-    return this.http.get<Tema[]>(`http://blogpessoal-deploy.onrender.com/tema/nome/${descricao}`,this.token)
+    return this.http.get<Tema[]>(`https://blogpessoal-deploy.onrender.com/tema/nome/${descricao}`,this.token)
   }
 
   postTema(tema:Tema): Observable<Tema>{
-    return this.http.post<Tema>('http://blogpessoal-deploy.onrender.com/tema',tema,this.token)
+    return this.http.post<Tema>('https://blogpessoal-deploy.onrender.com/tema',tema,this.token)
   }
 
   putTema(tema: Tema): Observable<Tema>{
-    return this.http.put<Tema>('http://blogpessoal-deploy.onrender.com/tema ',tema,this.token)
+    return this.http.put<Tema>('https://blogpessoal-deploy.onrender.com/tema ',tema,this.token)
   }
 
   deleteTema(id:number){
 
-    return this.http.delete(`http://blogpessoal-deploy.onrender.com/tema/${id}`,this.token)
+    return this.http.delete(`https://blogpessoal-deploy.onrender.com/tema/${id}`,this.token)
   }
 }
