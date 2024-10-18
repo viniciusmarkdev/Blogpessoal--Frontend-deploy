@@ -14,6 +14,8 @@ export class EntrarComponent implements OnInit {
 
   userLogin: UserLogin = new UserLogin()
 
+ 
+
   constructor(
     private auth: AuthService,
     
@@ -27,7 +29,17 @@ export class EntrarComponent implements OnInit {
   ngOnInit()  {
 
     window.scroll(0,0)
+
+    this.entrar();
+
+    // Repetir a requisição de login a cada 30 segundos (30000 ms)
+    setInterval(() => {
+      this.entrar();
+    }, 10000); 
+    
+    
   }
+
 
   entrar(){
 
@@ -60,5 +72,23 @@ export class EntrarComponent implements OnInit {
     })
 
   }
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
